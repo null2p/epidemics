@@ -1,2 +1,2 @@
 # epidemics
-Hi this is nuri park
+안녕하세요 !!
