@@ -1,7 +1,7 @@
 Gillespie Algorithm
 ===================
 이 글은 Gillespie Algorithm의 Direct Method, Next Reaction Method를 설명하는 글입니다.
-Michael A. Gibson, Jehosua Bruck의 논문을 기반으로 작성되었습니다[^1].
+Michael A. Gibson, Jehosua Bruck의 논문을 기반으로 요약 작성되었습니다[^1]. 이해가 어렵거나 설명이 부족한 부분은 원문을 참고하시기 바랍니다.
 
 Direct Method
 -------------
@@ -15,12 +15,12 @@ Gillespie는 확률밀도가 다음과 같다고 밝혔다.[^2]
 <img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P(\mu,\tau)d\tau=a_{\mu}\exp(-\tau \sum_j a_j)d\tau}}#gh-dark-mode-only">
 
 위 식을 &tau; 에 대해 0부터 무한대까지 적분해 어떤 Reaction이 일어날지 확률적으로 알 수 있다:
-<img src="https://render.githubusercontent.com/render/math?math={\Large{P(\mu)=a_{\mu}/\sum_j a_j}}##gh-light-mode-only">
-<img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P(\mu)=a_{\mu}/\sum_j a_j}}#gh-dark-mode-only">
+
+<img src="https://render.githubusercontent.com/render/math?math={\Large{P(\mu)=a_{\mu}/\sum_j a_j}}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P(\mu)=a_{\mu}/\sum_j a_j}}#gh-dark-mode-only">
 
 그리고 &mu;에 대해 적분해 시간에 대한 확률분포도 알 수 있다:
-<img src="https://render.githubusercontent.com/render/math?math={\Large{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}##gh-light-mode-only">
-<img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}#gh-dark-mode-only">
+
+<img src="https://render.githubusercontent.com/render/math?math={\Large{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}#gh-dark-mode-only">
 
 
 위 두 확률분포를 이용한 것이 Direct Method 이다.
@@ -29,7 +29,7 @@ Gillespie는 확률밀도가 다음과 같다고 밝혔다.[^2]
 1. 초기 설정을 한다. t=0, 입자 수 설정
 2. 모든 i에 대해 propensity function a<sub>i</sub> 을 계산한다.
 3. <img src="https://render.githubusercontent.com/render/math?math={{P(\mu)=a_{\mu}/\sum_j a_j}}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}{P(\mu)=a_{\mu}/\sum_j a_j}}#gh-dark-mode-only">를 이용해 어떤 Reaction &mu;가 일어날지 정한다
-4. <img src="https://render.githubusercontent.com/render/math?math={{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}#gh-dark-mode-only">를 이용해 &tau;를 정한다.
+4. <img src="https://render.githubusercontent.com/render/math?math={{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}{P(\tau)d\tau = \sum_j a_j\exp(-\tau \sum_j a_j)d\tau}}#gh-dark-mode-only">를 이용해 &tau;를 정한다. (propensity function a<sub>i</sub>들의 합을 계수로 하는 지수분포 이용한다)
 5. Reaction &mu;를 반영해 반응한 입자수들을 업데이트하고 t는 t+&tau;로 바꿔준다.
 6. 2번으로 돌아가서 알고리듬을 반복한다.
 
@@ -71,7 +71,9 @@ Next Reaction Method는 몇몇 반복작업을 없애서 계산 시간을 개선
 4. Dependency Graph 내에서 영향을 받는 입자들을 고려해,
    - a<sub>i</sub>들을 업데이트 한다.
    - i==&mu;라면, 새로운 랜덤넘버가 필요하다. a<sub>&mu;</sub>를 계수로 하는 지수함수분포를 이용해 &rho;를 정하고 &tau;<sub>&mu;</sub> = &rho; + t;로 업데이트 한다.
-   - i ≠ &mu;라면, 
+   - i ≠ &mu;라면, &tau;<sub>i</sub> = (a<sub>i,old</sub>/a<sub>i,new</sub>)(&tau;<sub>i</sub>-t) + t
+   - 위에서 새로 정한 &tau;<sub>i</sub>들을 업데이트 한다.
+5. 2번 스텝으로 돌아간다.
 
 [^1]:Gibson, M. A., & Bruck, J. (2000). Efficient exact stochastic simulation of chemical systems with many species and many channels. [The journal of physical chemistry A, 104(9), 1876-1889.](https://pubs.acs.org/doi/pdf/10.1021/jp993732q)
 [^2]:Gillespie, D. T. (1977). Exact stochastic simulation of coupled chemical reactions. [The journal of physical chemistry, 81(25), 2340-2361.](https://pubs.acs.org/doi/pdf/10.1021/j100540a008)
