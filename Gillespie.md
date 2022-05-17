@@ -68,7 +68,10 @@ Next Reaction Method는 몇몇 반복작업을 없애서 계산 시간을 개선
     - 모든 &tau;<sub>i</sub>를 Indexed Priority Queue에 저장한다.
 2. Indexed Priority Queue에 저장된 &tau;중 가장 작은 &tau;를 고른다. 이것이 다음 Reaction &mu;가 된다.
 3. Reaction &mu;에 영향을 받는 입자들의 수를 바꿔주고 시간은 t = &tau;로 설정한다.
-4. Dependency Graph 내에서 
+4. Dependency Graph 내에서 영향을 받는 입자들을 고려해,
+   - a<sub>i</sub>들을 업데이트 한다.
+   - i==&mu;라면, 새로운 랜덤넘버가 필요하다. a<sub>&mu;</sub>를 계수로 하는 지수함수분포를 이용해 &rho;를 정하고 &tau;<sub>&mu;</sub> = &rho; + t;로 업데이트 한다.
+   - i ≠ &mu;라면, 
 
 [^1]:Gibson, M. A., & Bruck, J. (2000). Efficient exact stochastic simulation of chemical systems with many species and many channels. [The journal of physical chemistry A, 104(9), 1876-1889.](https://pubs.acs.org/doi/pdf/10.1021/jp993732q)
 [^2]:Gillespie, D. T. (1977). Exact stochastic simulation of coupled chemical reactions. [The journal of physical chemistry, 81(25), 2340-2361.](https://pubs.acs.org/doi/pdf/10.1021/j100540a008)
