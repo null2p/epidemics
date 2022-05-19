@@ -79,7 +79,10 @@ Re-using &tau;<sub>i</sub>
 -----
  Next Reaction Method에서는 한 Reaction이 일어나고 나면 영향을 받는 입자들의 a<sub>i</sub>, &tau;<sub>i</sub>들만 업데이트 하게 된다. 그 외의 값들은 모두 재사용하게 되는데 이게 수학적으로 타당한 것인지 의문이 들것이다. 이번 챕터에서는 &tau;<sub>i</sub>를 재사용 하는 것이 왜 타당한지 수학적으로 밝힌다.
  
- 첫번째로, First Reaction Method와 Next Reaction Method는 time이 상대적(First)이냐, 절대적(Next)이냐의 차이가 존재한다. random variable을 R<sub>i</sub>라 하자. R<sub>i</sub>=exp(a<sub>i</sub>) 이며 R<sub>i</sub>의 density는 P<sub>R<sub>i</sub></sub>(&tau;) = &theta;(&tau;)a<sub>i</sub>exp(-a<sub>i</sub>&tau;)
+ 첫번째로, First Reaction Method와 Next Reaction Method는 time이 상대적(First)이냐, 절대적(Next)이냐의 차이가 존재한다. random variable을 R<sub>i</sub>라 하자. R<sub>i</sub>=exp(a<sub>i</sub>) 이며 R<sub>i</sub>의 density는 P<sub>R<sub>i</sub></sub>(&tau;) = &theta;(&tau;)a<sub>i</sub>exp(-a<sub>i</sub>&tau;)이다. 절대적 시간은 n번째 iteration에서의 시간에 상대적 시간을 더한 꼴이다. T<sub>i</sub> = R<sub>i</sub> + t<sub>n</sub>. 따라서 T<sub>i</sub>의 density는 RVT(random variable transformation)을 이용해 구할 수 있다. 
+ 
+<img src="https://render.githubusercontent.com/render/math?math={\Large{P_{T_i}(\tau)=\int_{-\infty}^{\infty}P_{R_i}(\tau')\delta(\tau - [\tau' + t_n])d\tau' = P_{R_i}(\tau-t_n) = \theta(\tau - t_n)a_i \exp(-a_i (\tau-t_n)) }}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P_{T_i}(\tau)=\int_{-\infty}^{\infty}P_{R_i}(\tau')\delta(\tau - [\tau' + t_n])d\tau' = P_{R_i}(\tau-t_n) = \theta(\tau - t_n)a_i \exp(-a_i (\tau-t_n)) }}#gh-dark-mode-only">
+
 
 
 [^1]:Gibson, M. A., & Bruck, J. (2000). Efficient exact stochastic simulation of chemical systems with many species and many channels. [The journal of physical chemistry A, 104(9), 1876-1889.](https://pubs.acs.org/doi/pdf/10.1021/jp993732q)
