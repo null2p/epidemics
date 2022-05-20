@@ -1,0 +1,161 @@
+No protocol specified
+
+real	5m36.741s
+user	162m57.907s
+sys	2m52.092s
+No protocol specified
+
+real	28m43.536s
+user	826m47.433s
+sys	17m52.361s
+No protocol specified
+
+real	159m49.615s
+user	4599m57.787s
+sys	101m6.233s
+No protocol specified
+
+real	880m19.357s
+user	25245m30.714s
+sys	579m25.200s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 19 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	78m7.181s
+user	78m5.074s
+sys	0m0.120s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 2 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	0m6.491s
+user	0m5.184s
+sys	0m0.049s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	0m12.177s
+user	0m10.787s
+sys	0m0.090s
+No protocol specified
+
+real	38m16.329s
+user	753m39.671s
+sys	226m21.199s
+No protocol specified
+
+real	42m4.107s
+user	566m56.918s
+sys	340m48.484s
+No protocol specified
+
+real	45m20.942s
+user	391m37.235s
+sys	345m27.930s
+No protocol specified
+
+real	46m49.488s
+user	491m33.749s
+sys	358m21.973s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 12 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	0m33.526s
+user	0m8.135s
+sys	0m24.111s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 8 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	0m10.223s
+user	0m2.806s
+sys	0m6.153s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 19 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	0m4.395s
+user	0m1.896s
+sys	0m0.499s
+No protocol specified
+
+real	55m44.313s
+user	1626m47.724s
+sys	15m9.338s
+No protocol specified
+
+real	215m30.084s
+user	6269m45.036s
+sys	107m40.203s
+No protocol specified
+
+real	813m39.081s
+user	23025m6.805s
+sys	519m8.988s
+No protocol specified
+
+real	3131m49.619s
+user	86485m51.410s
+sys	3418m52.548s
+No protocol specified
+
+real	10301m31.404s
+user	267566m38.537s
+sys	18947m11.915s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 18 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	5047m17.451s
+user	5046m6.348s
+sys	0m3.535s
+No protocol specified
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 5 with PID 0 on node 22-desktop exited on signal 15 (Terminated).
+--------------------------------------------------------------------------
+
+real	0m6.622s
+user	0m5.304s
+sys	0m0.067s
