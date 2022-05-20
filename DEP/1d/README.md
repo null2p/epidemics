@@ -93,7 +93,7 @@ erwin/fig4.cpp
 DEPmodel 클래스에서 필요한 값들과 NextReactionMethod 함수에서 필요한 T_max를 정해주면 됩니다. 논문 [^1]에 따라...
   - 10000개의 샘플 (parallelization = 10000)
   - 일차원 (z = 2)
-  - $\rho = 6.765$ (total_number = 6.765*L)
+  - &rho; = 6.765 (total_number = 6.765*L)
   - Homogeneous 시작 조건 (init = "homogeneous")
   - 최대 시간 (T_max = 100000)
 
