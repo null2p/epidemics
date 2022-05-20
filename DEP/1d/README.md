@@ -4,6 +4,9 @@ DEP는 DEP_algorithm.cpp내에 구현되어 있습니다. 여기서는 1d DEP mo
 
 컴파일 방법
 -----
+
+현재 디렉토리가 erwin 폴더일 때의 컴파일 방법입니다
+
 ```
 mpic++ fig4.cpp ../DEP_algorithm.cpp
 ```
