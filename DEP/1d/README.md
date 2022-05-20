@@ -4,13 +4,18 @@ DEP는 DEP_algorithm.cpp내에 구현되어 있습니다. 여기서는 1d DEP mo
 
 컴파일 방법
 -----
+
+현재 디렉토리가 erwin 폴더일 때의 컴파일 방법입니다
+
 ```
 mpic++ fig4.cpp ../DEP_algorithm.cpp
 ```
 
 실행 방법
 -----
+```
 mpirun -np $cpu스레드개수 a.out $L
+```
 
 결과물 예시 (L = 128)
 -----
@@ -50,6 +55,9 @@ mpirun -np $cpu스레드개수 a.out $L
 12589.3 0.000137226     0.000199601
 15848.9 0       0
 ```
+![image](https://user-images.githubusercontent.com/68416208/169491209-671137bd-fa2b-48a8-b07a-6c478c8a95c5.png)
+
+위 그림에서 diamond 들은 제 코드로 얻은 결과이며 회색의 원들은 Erwin 논문[^1]의 fig 4 입니다. 
 
 DEP_algorithm.h
 -----
