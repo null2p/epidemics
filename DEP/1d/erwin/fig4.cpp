@@ -29,6 +29,7 @@ int main(int argc, char* argv[]){
 	//int max_steps = params.final_total_number - params.init_total_number;
 	//if(params.steps > max_steps) params.steps = max_steps;
 	int total_number = params.init_total_number;
+	int seed = WORKER;
 
 	//double* density_B = new double[params.T_max]{};
 	//double* P_survival = new double[params.T_max]{};
@@ -46,7 +47,8 @@ int main(int argc, char* argv[]){
 	if(WORKER==0)  cout<<"#t\tdensity_B\tP_survival"<<endl;
 
 	for(int i=0;i<run_by_onecore;i++){
-		DEPmodel1d density_production(params.L,total_number,params.z,params.T_max, params.init_dist);
+		seed = WORKER + i*NUM_WORKERS;
+		DEPmodel1d density_production(params.L,total_number,params.z,params.T_max, params.init_dist, seed);
 		//density_production.DanielMaiaAlgorithm(T_max);
 		//density_production.GillespieAlgorithm(T_max);
 		density_production.NextReactionMethod(T_max);
