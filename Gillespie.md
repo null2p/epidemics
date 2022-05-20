@@ -92,7 +92,6 @@ Re-using &tau;<sub>i</sub>
 
 **Proof.** Next Reaction Method 알고리듬 내에서 &tau;<sub>i</sub>는 식 7번에 따라 분포되어있고, 그 중 최소의 &tau;인 &tau;<sub>&mu;</sub>를 찾는다. T<sub>&mu;</sub>는 &tau;<sub>&mu;</sub>가 되고 다른 &tau;<sub>i</sub>들은 모두 &tau;<sub>&mu;</sub>보다 클 것이다. 그러므로 다른 T<sub>i</sub>들은 Pr(T<sub>i</sub> > u |T<sub>i</sub> >  &tau;<sub>&mu;</sub>)에 따라 분포 될 것이다. 여기서 u가 &tau;<sub>&mu;</sub>보다 큰지 작은지에 따라 분류할 수 있다. 따라서 첫번째로 u가 &tau;<sub>&mu;</sub>보다 큰 경우를 보면, 분모는 Pr$(T_i > u)$가 되고 $\exp(-a_{i,n}(u-t_n))/\exp(-a_{i,n}(\tau_{\mu}-t_n)) = \exp(-a_{i,n}(i-\tau_{\mu}))$를 얻게 된다. 다음으로 $u$가 $\tau_{\mu}$보다 작거나 같은 경우이다. 분모는 Pr$(T_i>\tau_{\mu})$가 되어서 1이 된다. 따라서 위 Theroem을 만족하게 된다.
 
-$\delta + \sum $
 
 [^1]:Gibson, M. A., & Bruck, J. (2000). Efficient exact stochastic simulation of chemical systems with many species and many channels. [The journal of physical chemistry A, 104(9), 1876-1889.](https://pubs.acs.org/doi/pdf/10.1021/jp993732q)
 [^2]:Gillespie, D. T. (1977). Exact stochastic simulation of coupled chemical reactions. [The journal of physical chemistry, 81(25), 2340-2361.](https://pubs.acs.org/doi/pdf/10.1021/j100540a008)
