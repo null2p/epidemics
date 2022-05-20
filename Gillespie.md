@@ -81,9 +81,18 @@ Re-using &tau;<sub>i</sub>
  
  첫번째로, First Reaction Method와 Next Reaction Method는 time이 상대적(First)이냐, 절대적(Next)이냐의 차이가 존재한다. random variable을 R<sub>i</sub>라 하자. R<sub>i</sub>=exp(a<sub>i</sub>) 이며 R<sub>i</sub>의 density는 P<sub>R<sub>i</sub></sub>(&tau;) = &theta;(&tau;)a<sub>i</sub>exp(-a<sub>i</sub>&tau;)이다. 절대적 시간은 n번째 iteration에서의 시간에 상대적 시간을 더한 꼴이다. T<sub>i</sub> = R<sub>i</sub> + t<sub>n</sub>. 따라서 T<sub>i</sub>의 density는 RVT(random variable transformation)을 이용해 구할 수 있다. 
  
-<img src="https://render.githubusercontent.com/render/math?math={\Large{P_{T_i}(\tau)=\int_{-\infty}^{\infty}P_{R_i}(\tau')\delta(\tau - [\tau' + t_n])d\tau' = P_{R_i}(\tau-t_n) = \theta(\tau - t_n)a_i \exp(-a_i (\tau-t_n)) }}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P_{T_i}(\tau)=\int_{-\infty}^{\infty}P_{R_i}(\tau')\delta(\tau - [\tau' + t_n])d\tau' = P_{R_i}(\tau-t_n) = \theta(\tau - t_n)a_i \exp(-a_i (\tau-t_n)) }}#gh-dark-mode-only">
+<img src="https://render.githubusercontent.com/render/math?math={\Large{P_{T_i}(\tau)=\int_{-\infty}^{\infty}P_{R_i}(\tau')\delta(\tau - [ \tau' + t_n ])d\tau' = P_{R_i}(\tau-t_n) = \theta(\tau - t_n)a_i \exp(-a_i (\tau-t_n)) }}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P_{T_i}(\tau)=\int_{-\infty}^{\infty}P_{R_i}(\tau')\delta(\tau - [ \tau' + t_n ])d\tau' = P_{R_i}(\tau-t_n) = \theta(\tau - t_n)a_i \exp(-a_i (\tau-t_n)) }}#gh-dark-mode-only">...(7)
 
+따라서, First Reaction Method의 절대적인 시간은 Direct method의 상대적인 시간과 동등하다. 이제 Next Reaction Method에서도 위 7번 식을 만족하는지 보일 것이다. Next Reaction Method의 알고리듬 1번은 First Reaction Method의 알고리듬 1~3번까지와 같기 때문에 위 7번 식을 만족할 것이다. 우리는 그 이후에도 이를 만족한다고 가정하고 이를 증명한다.
 
+**Theorem 1.** Next Reaction Method의 알고리듬 Step 2가 시작할 때 7번식을 만족한다고 가정하자, 모든 i ≠ &mu;에 대해, &tau;<sub>i</sub>는 다음과 같이 분포되어 있다.
+
+<img src="https://render.githubusercontent.com/render/math?math={\Large{P_{T_i}(\tau) =  \theta(\tau - t_{n+1})a_i \exp(-a_i (\tau-t_{n+1})) }}##gh-light-mode-only"><img src="https://render.githubusercontent.com/render/math?math={\color{white}\Large{P_{T_i}(\tau) = \theta(\tau - t_{n+1})a_i \exp(-a_i (\tau-t_{n+1})) }}#gh-dark-mode-only">
+... (8)
+
+**Proof.** Next Reaction Method 알고리듬 내에서 &tau;<sub>i</sub>는 식 7번에 따라 분포되어있고, 그 중 최소의 &tau;인 &tau;<sub>&mu;</sub>를 찾는다. T<sub>&mu;</sub>는 &tau;<sub>&mu;</sub>가 되고 다른 &tau;<sub>i</sub>들은 모두 &tau;<sub>&mu;</sub>보다 클 것이다. 그러므로 다른 T<sub>i</sub>들은 Pr(T<sub>i</sub> > u |T<sub>i</sub> >  &tau;<sub>&mu;</sub>)에 따라 분포 될 것이다. 여기서 u가 &tau;<sub>&mu;</sub>보다 큰지 작은지에 따라 분류할 수 있다. 따라서 첫번째로 u가 &tau;<sub>&mu;</sub>보다 큰 경우를 보면, 분모는 Pr$(T_i > u)$가 되고 $\exp(-a_{i,n}(u-t_n))/\exp(-a_{i,n}(\tau_{\mu}-t_n)) = \exp(-a_{i,n}(i-\tau_{\mu}))$를 얻게 된다. 다음으로 $u$가 $\tau_{\mu}$보다 작거나 같은 경우이다. 분모는 Pr$(T_i>\tau_{\mu})$가 되어서 1이 된다. 따라서 위 Theroem을 만족하게 된다.
+
+$\delta + \sum $
 
 [^1]:Gibson, M. A., & Bruck, J. (2000). Efficient exact stochastic simulation of chemical systems with many species and many channels. [The journal of physical chemistry A, 104(9), 1876-1889.](https://pubs.acs.org/doi/pdf/10.1021/jp993732q)
 [^2]:Gillespie, D. T. (1977). Exact stochastic simulation of coupled chemical reactions. [The journal of physical chemistry, 81(25), 2340-2361.](https://pubs.acs.org/doi/pdf/10.1021/j100540a008)
