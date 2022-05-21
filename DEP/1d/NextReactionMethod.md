@@ -91,5 +91,5 @@ Time Complexity
 비록 Dependency Graph를 이용하는 게 간단하지는 않지만 한번 작성해두면 계산속도가 L배 가량 빨라지게 된다. First Reaction Method의 경우, 한 Reaction이 일어나고 나면 모든 Propensity Funcion을 업데이트 해야하고 (4L Random Number Call) Next Reaction Method의 경우 최대 9번의 업데이트를 하기 때문이다.
 - Propensity Function 업데이트 :  O(L) -> O(1)
 
-또한 Next Reaction Method는 최소 &tau;를 찾는데 우선순위 큐와 힙을 이용하기 때문에 일반적인 정렬을 이용하는 First Reaction Method 대비 L배 가량 빠르다. 
+또한 Next Reaction Method는 최소 &tau;를 찾는데 우선순위 큐와 힙을 이용하기 때문에 일반적인 정렬을 이용하는 First Reaction Method 대비 L배 가량 빠르다. (Merge Sort 기준) 
 - &tau; 정렬, 탐색 : O( Llog(L) ) -> O( log(L) )
