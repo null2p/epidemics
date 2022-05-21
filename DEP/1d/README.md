@@ -1,6 +1,6 @@
 # Diffusive Epidemic Process (DEP)
 
-DEP는 DEP_algorithm.cpp내에 구현되어 있습니다. 여기서는 1d DEP model을 이용하여 2022년에 출판된 논문[^1]의 그림들을 구현하도록 하겠습니다. Random Number Generator로는 D. E. Shaw Research의 Random123 라이브러리 내의 Philox를 사용합니다. Random123의 RNG들이 어떻게 구현되는지는 다음 논문에 자세히 나와 있습니다 [^2]. 또한 Github 링크도 존재하여 간단한 rng 원리와 설치법도 설명되어 있습니다 [^3].
+DEP는 DEP_algorithm.cpp내에 구현되어 있습니다. 여기서는 1d DEP model을 이용하여 2022년에 출판된 논문[^1]의 그림 4를 구현하도록 하겠습니다. Random Number Generator로는 D. E. Shaw Research의 Random123 라이브러리 내의 Philox를 사용합니다. Random123의 RNG들이 어떻게 구현되는지는 다음 논문에 자세히 나와 있습니다 [^2]. 또한 Github 링크도 존재하여 간단한 rng 원리와 설치법도 설명되어 있습니다 [^3].
 
 컴파일 방법
 -----
