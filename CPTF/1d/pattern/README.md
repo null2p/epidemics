@@ -51,6 +51,5 @@ You need to change the name of text file to read.
 np.loadtxt("./seed_single/theta1/L1000T100000ens3000p0.49598theta1R0.5Db0.5.txt", usecols=(0,1,2,3,4,5,6,7,8,9), unpack=True)
 ```
 
-![rho_t_example](https://user-images.githubusercontent.com/68416208/170169590-fd893f6b-5f7e-410d-9f23-ccd6fd02b998.png)
-
+![pattern_example](https://user-images.githubusercontent.com/68416208/170174754-78d2c372-6c30-4e0e-9e2d-6a6a6ed4ae66.png)
 
