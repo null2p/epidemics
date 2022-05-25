@@ -1,62 +1,49 @@
-# MUCA
-multicanonical method to the 2d Blume-Capel model
-
+# Contact Process with Temporal Feedback
 
 How to Compile
 -----
 
-Estimating Multicanonical Weight
 ```sh
-CPU (C++)  : make muca_mag
-GPU (cuda) : make multigpu_weight
-```
-
-Producing Order Parameters
-```sh
-CPU (C++)  : make produce_mpi
-GPU (cuda) : make produce_gpu
+make density
 ```
 
 How to run
 ------
-Modify Weight Bash file
+Modify Bash file (CPTF_density.bash)
 
 ```sh
 #!/bin/bash
 
-L="72"                   #size of lattice
-starting_M="1"           #M is the spin flip trials for each thread
-jacks="1"                #the number of data to use jackknife method
-recursive_update="0"     #if '0', trivial update is activated
-rand_config="1"          #if '0', the initial spin configuration is unifomly distributed, else, initial spin configuration is random.
-continuing="0"           #init weight from extrapolated weight
-
-#CPU
-n="16"                   #mpi size
-#time nohup mpirun -np $n ./weight_produce $L $starting_M $jacks $continuing >> result00.txt &
-
-
-#GPU
-starting_gpu="0"
-last_gpu="0"
-time ./multigpu_weight $L $starting_gpu $last_gpu $jacks $starting_M $recursive_update $continuing
+n="30"                    #Number of CPU to run
+L="1000"                  #size of lattice
+p="0.46436"               #1-p is infection rate
+theta="1.5"               #theta is related with the life time of B particles
+R_btoa="0.5"              #the probability of B -> A
+maxT="100000"             #maximal time for this dynamics
+Db="0.5"                  #Probability of direction bias
+seed="single"             #seed type : 'single' or 'half'
+parallelization="30000"   #Number of Samples(Ensembles)
 ```
 
-Estimating Multicanonical Weight
+Run bash file
 ```
-bash weight.bash
-```
-Producing Order Parameters
-```
-bash produce.bash
+bash CPTF_density.bash
 ```
 
-Simple Diagram of Multicanonical Method (Estimating Weight)
+Result Files path
+```
+./rho_scaling/seed_*/theta*/L*T*ens*p*theta*R*Db*.txt
+```
+
+How to Draw figures
 ----
-![MUCA Diagram light](https://user-images.githubusercontent.com/68416208/169634653-776e539a-8cd9-4b31-8d06-de3976b42489.png#gh-light-mode-only)
-![MUCA Diagram dark](https://user-images.githubusercontent.com/68416208/169634781-6d24ddd7-fda8-4384-a347-38dc2925c886.png#gh-dark-mode-only)
 
-Simple Result (Magnetic Susceptibility, T = 0.5)
------
-![image](https://user-images.githubusercontent.com/68416208/169634892-c42567f5-e5dc-43d1-b477-bbb3e0ef0595.png)
+modify a file ./rho_scaling/rho_t.py
+
+You need to change the name of text file to read.
+
+```python3
+np.loadtxt("./seed_single/theta1/L1000T100000ens3000p0.49598theta1R0.5Db0.5.txt", usecols=(0,1,2,3,4,5,6,7,8,9), unpack=True)
+```
+
 
