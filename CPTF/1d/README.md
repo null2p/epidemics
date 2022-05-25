@@ -38,7 +38,7 @@ Result Files path
 How to Draw figures
 ----
 
-modify a file ./rho_scaling/rho_t.py
+modify a file ./rho_scaling/rho*.py
 
 You need to change the name of text file to read.
 
@@ -47,4 +47,5 @@ np.loadtxt("./seed_single/theta1/L1000T100000ens3000p0.49598theta1R0.5Db0.5.txt"
 ```
 
 ![rho_t_example](https://user-images.githubusercontent.com/68416208/170169590-fd893f6b-5f7e-410d-9f23-ccd6fd02b998.png)
+
 
