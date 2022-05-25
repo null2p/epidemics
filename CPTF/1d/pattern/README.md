@@ -43,13 +43,22 @@ Result Files path
 How to Draw figures
 ----
 
-modify a file ./rho_scaling/rho*.py
+modify a file ./stpattern.py
 
 You need to change the name of text file to read.
 
 ```python3
-np.loadtxt("./seed_single/theta1/L1000T100000ens3000p0.49598theta1R0.5Db0.5.txt", usecols=(0,1,2,3,4,5,6,7,8,9), unpack=True)
+L = 128
+theta = 1.5
+p = 0.473
+Db = 1
+ens = 7
+
+patternA = np.loadtxt("./seed_single/theta"+str(theta)+"/Aparticle_L"+str(L)+"T256ens"+str(ens)+"p"+str(p)+"theta"+str(theta)+"R0.5Db"+str(Db)+".txt")
+patternB = np.loadtxt("./seed_single/theta"+str(theta)+"/Bparticle_L"+str(L)+"T256ens"+str(ens)+"p"+str(p)+"theta"+str(theta)+"R0.5Db"+str(Db)+".txt")
 ```
+
+Run stpattern.py
 
 ![pattern_example](https://user-images.githubusercontent.com/68416208/170174754-78d2c372-6c30-4e0e-9e2d-6a6a6ed4ae66.png)
 
