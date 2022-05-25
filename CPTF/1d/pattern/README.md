@@ -4,7 +4,7 @@ How to Compile
 -----
 
 ```sh
-make density
+make pattern
 ```
 
 How to run
